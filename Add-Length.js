@@ -1,8 +1,0 @@
-// Your task is to write a function that takes a String and returns an Array / list with the length of each word added to each element.
-
-function addLength(str) {
-    return str.split(' ').map(function (word) {
-        return word + ' ' + word.length;
-    });
-
-}
