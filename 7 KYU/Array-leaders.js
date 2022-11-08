@@ -9,4 +9,5 @@ function arrayLeaders(numbers){
         arr.push(numbers[i]) // push the current number to the array
         }
     }
+    return arr
 }
