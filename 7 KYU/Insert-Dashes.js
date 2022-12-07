@@ -1,21 +1,16 @@
-// Write a function insert_dash(num) / insertDash(num) / InsertDash(int num) that will insert dashes('-') between each two odd digits in num.For example: if num is 454793 the output should be 4547 - 9 - 3. Don't count zero as an odd digit.
-
-// Note that the number will always be non - negative(>= 0).
-
-
 function insertDash(num) {
-    var numArray = num.toString().split('').map(Number)
-    var result = []
+    var numArray = num.toString().split('').map(Number) // convert the number to a string, split it into an array, and convert each item in the array to a number
+    var result = [] // create an empty array to store the result
 
-    for (var i = 0; i < numArray.length; i++) {
-        if (numArray[i] % 2 !== 0 && numArray[i + 1] % 2 !== 0) {
-            result.push(numArray[i])
-            result.push('-')
+    for (var i = 0; i < numArray.length; i++) { // for each number in the array
+        if (numArray[i] % 2 !== 0 && numArray[i + 1] % 2 !== 0) { // if the number is odd and the next number is odd
+            result.push(numArray[i]) // push the number to the result array
+            result.push('-') // push a dash to the result array
         }
         else {
-            result.push(numArray[i])
+            result.push(numArray[i]) // push the number to the result array
         }
     }
-    if (result[result.length - 1] == '-') result.pop()
-    return result.join("")
+    if (result[result.length - 1] == '-') result.pop() // if the last item in the result array is a dash, remove it
+    return result.join("") // return the result array as a string
 }
