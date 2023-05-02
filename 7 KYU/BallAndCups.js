@@ -8,3 +8,15 @@ function cupAndBalls(b, arr){
     }
     return ballPosition
 };
+
+// faster optomization
+function cupAndBalls(b, arr){
+    let cupPositions = [1, 2, 3];
+    for (let i = 0; i < arr.length; i++) {
+        const switchCups = arr[i];
+        const temp = cupPositions[switchCups[0]-1];
+        cupPositions[switchCups[0]-1] = cupPositions[switchCups[1]-1];
+        cupPositions[switchCups[1]-1] = temp;
+    }
+    return cupPositions.indexOf(b) + 1;
+};
